@@ -1,0 +1,27 @@
+!-- enabling SSH auf ubuntu 
+
+apt get update
+sudo apt install openssh-server
+sudo systemctl status ssh
+!-- allowing ssh auf firewall
+sudo ufw allow ssh
+
+!-- ifconfig
+sudo apt install net-tools
+
+C:\Program Files\RealVNC\VNC Server\vncguihelper.exe" vncserver.exe -_fromGui -start -showstatus
+
+tvnviewer.exe %h:%p
+
+
+#-- tunnel configuration und activation
+sudo ip tunnel add tun602 mode gre remote 10.10.112.2 local 10.10.100.234 ttl 255
+sudo ip link set tun602 up 
+sudo ip addr add 10.10.255.2/30 dev tun602
+sudo ip route add 10.10.2.0/24 dev tun602
+sudo ip route add 10.10.96.0/19  via 10.10.100.254 dev ens34
+
+ sudo docker run -it -P --network host -v /home/wetlic/vol/exa2:/mnt/exa2 a3cd2d628a6d
+
+ 
+ 
